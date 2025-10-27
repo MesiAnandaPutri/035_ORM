@@ -54,7 +54,7 @@ app.put('/komik/:id', async (req, res) => {
             return res.status(404).send({ message: 'Komik tidak tersedia' });
         }
         await komik.update(data);
-        res.send((message = 'Komik berhasil diupdate', komik));
+        res.send((message = 'Komik berhasil diupdate'));
     } catch (err) {
         res.status(500).send(err);
     }
@@ -69,7 +69,7 @@ app.delete('/komik/:id', async (req, res) => {
             return res.status(404).send({ message: 'Komik tidak tersedia' });
         }
         await komik.destroy();
-        res.send((message = 'Komik berhasil dihapus', komik));
+        res.send((message = 'Komik berhasil dihapus'));
     } catch (err) {
         res.status(500).send(err);
     }
